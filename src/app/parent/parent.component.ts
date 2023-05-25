@@ -1,4 +1,4 @@
-import { Component,ViewChild,AfterViewInit } from '@angular/core';
+import { Component,ViewChild,AfterViewInit, OnInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 
 @Component({
@@ -6,7 +6,8 @@ import { ChildComponent } from '../child/child.component';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements AfterViewInit{
+export class ParentComponent implements OnInit{
+
 
   @ViewChild(ChildComponent) child:any;
 
@@ -14,11 +15,28 @@ export class ParentComponent implements AfterViewInit{
 
   anotherMessageFromParent ="I am the second message";
 
-  constructor(){}
-
+  
   message:string | undefined;
 
-  ngAfterViewInit(){
-    this.message = this.child.message;
+  receivedGreeting:string | undefined;
+
+  constructor(){}
+
+
+  ngOnInit(): void {
+
+
+
   }
+
+  receiveMessage($event: string) {
+    this.receivedGreeting = $event;
+    }
+
+
+  // ngAfterViewInit(){
+  //   this.message = this.child.message;
+  // }
+
+ 
 }

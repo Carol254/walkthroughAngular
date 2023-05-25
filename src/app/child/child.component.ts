@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -13,5 +13,14 @@ export class ChildComponent {
 
   @Input() secondMessage:string | undefined;
 
+  @Output() messageEvent = new EventEmitter<string>();
+
   message ="Hello There!";
+
+  greetings = "Hallo Mutter";
+
+  
+  sendMessage(){
+    this.messageEvent.emit(this.greetings)
+  }
 }

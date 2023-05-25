@@ -1,4 +1,7 @@
 <p>Before child</p>
-<app-child [childMessage] = "parentMessage" [secondMessage]="anotherMessageFromParent" ></app-child>
+<app-child [childMessage] = "parentMessage" [secondMessage]="anotherMessageFromParent" (messageEvent)="receiveMessage($event)"></app-child>
+
+<p>{{receivedGreeting}}</p>
 
 <p>Message is:{{message}}</p>
+
