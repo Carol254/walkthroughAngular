@@ -12,4 +12,6 @@ export class ChildComponent {
   @Input() childMessage:string | undefined;
 
   @Input() secondMessage:string | undefined;
+
+  message ="Hello There!";
 }
