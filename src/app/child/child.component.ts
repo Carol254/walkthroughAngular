@@ -8,7 +8,8 @@ import { Component,Input } from '@angular/core';
 
 
 export class ChildComponent {
-  sule!: string;
 
   @Input() childMessage:string | undefined;
+
+  @Input() secondMessage:string | undefined;
 }

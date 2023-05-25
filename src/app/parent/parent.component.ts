@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class ParentComponent {
 
   parentMessage = "message from parent";
+
+  anotherMessageFromParent ="I am the second message";
 }
